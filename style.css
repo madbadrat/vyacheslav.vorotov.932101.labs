@@ -16,5 +16,32 @@ body {
 
 .content {
     background-color: #0000ff;
-    height: 50px;
+    padding: 25px;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content h1 {
+    color: #ffffff;
+}
+
+.content .figure {
+    height: 100px;
+    width: 100px;
+    border: 5px solid #ffffff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.content .text {
+    color: #ffffff;
+}
+
+.content .link {
+    text-align: center;
+}
+
+.content .link a {
+    color: #ff0000;
 }
