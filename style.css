@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    border: 1px solid red;
 }
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -43,5 +44,9 @@ body {
 }
 
 .content .link a {
+    color: #ff0000;
+}
+
+.content .list .red_word {
     color: #ff0000;
 }
