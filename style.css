@@ -1,3 +1,7 @@
+.figure {
+    opacity: .8;
+}
+
 .square {
     display: inline-block;
     position: absolute;
