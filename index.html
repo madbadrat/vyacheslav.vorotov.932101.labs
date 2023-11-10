@@ -6,21 +6,23 @@
     </head>
 
     <body>
-        <div class="lines">
-            <div class="line">
-                <input type="text" class="left">
-                <input type="text" class="right">
+        <div id="lines">
+            <!-- <div class="line">
+                <input class="left">
+                <input class="right">
 
                 <button class="up">↑</button>
                 <button class="down">↓</button>
                 <button class="delete">x</button>
-            </div>
+            </div> -->
         </div>
 
         <div class="controls">
-            <button>Добавить элемент</button>
+            <button onclick="newLine()">Добавить элемент</button>
             <br>
-            <button>Сохранить</button>
+            <button onclick="getList()">Сохранить</button>
         </div>
+
+        <script src="buttonClicks.js"></script>
     </body>
 </html>
