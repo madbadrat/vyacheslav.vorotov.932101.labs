@@ -68,6 +68,5 @@ function getList() {
 
     if (document.body.contains(list)) document.body.replaceChild(listOnScreen, document.body.lastChild);
     else document.body.appendChild(listOnScreen);
-
-    document.body.appendChild(listOnScreen)
+    
 }
