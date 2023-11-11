@@ -13,25 +13,26 @@
                 <p>0</p>
             </div>
             <div class="controls">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>/</button>
-                <button>C</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>*</button>
-                <button>&lt;-</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>-</button>
-                <button class="equals">=</button>
-                <button class="zero">0</button>
-                <button>.</button>
-                <button>+</button>
+                <button class="term">7</button>
+                <button class="term">8</button>
+                <button class="term">9</button>
+                <button class="operation">/</button>
+                <button onclick="deleteAll()">C</button>
+                <button class="term">4</button>
+                <button class="term">5</button>
+                <button class="term">6</button>
+                <button class="operation">*</button>
+                <button onclick="deleteOneChar()">&lt;-</button>
+                <button class="term">1</button>
+                <button class="term">2</button>
+                <button class="term">3</button>
+                <button class="operation">-</button>
+                <button class="equals" onclick="calculate()">=</button>
+                <button class="zero term">0</button>
+                <button class="term">.</button>
+                <button class="operation">+</button>
             </div>
         </div>
+        <script src="calc.js"></script>
     </body>
 </html>
