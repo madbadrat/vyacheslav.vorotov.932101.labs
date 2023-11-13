@@ -1,7 +1,7 @@
 const terms = document.querySelectorAll(".term");
 const operations = document.querySelectorAll(".operation");
 
-let currentOperation = "";
+let currentOperation = null;
 const display = document.querySelector(".display");
 const paragraphWithText = display.children[0];
 
@@ -27,9 +27,16 @@ operations.forEach(op => {
     op.addEventListener(
         "click",
         function() {
-            currentOperation = op.innerHTML;
+            if (currentOperation == null) {
+                currentOperation = op.innerHTML;
 
-            paragraphWithText.innerHTML += currentOperation;
+                paragraphWithText.innerHTML += currentOperation;
+            }
+            else {
+                currentOperation = op.innerHTML;
+
+                paragraphWithText.innerHTML = paragraphWithText.innerHTML.substring(0, paragraphWithText.innerHTML.length - 1) + currentOperation;
+            }
         }
     )
 });
@@ -59,11 +66,13 @@ function calculate() {
                 paragraphWithText.innerHTML = expression[0] / expression[1];
             break;
     }
+    currentOperation = null;
 }
 
 // cleaners
 function deleteAll() {
     display.children[0].innerHTML = "0";
+    currentOperation = null;
 }
 
 function deleteOneChar() {
