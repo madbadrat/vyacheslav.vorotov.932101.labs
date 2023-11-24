@@ -1,0 +1,24 @@
+﻿@model vyacheslav.vorotov._932101.labs.Models.CalcModel
+@{
+    ViewData["Title"] = "ViewModel";
+    var FirstTerm = Model.FirstTerm;
+    var SecondTerm = Model.SecondTerm;
+}
+
+<h1>ViewModel</h1>
+First Term: @FirstTerm <br>
+Second Term: @SecondTerm <br>
+<br>
+<h2>Results:</h2>
+Addition: @(FirstTerm + SecondTerm) <br>
+Subtraction: @(FirstTerm - SecondTerm) <br>
+Multiplication: @(FirstTerm * SecondTerm) <br>
+Division:
+@if (SecondTerm == 0)
+{
+    <span>ERROR!</span>
+}
+else 
+{
+    <span>@(FirstTerm / SecondTerm)</span>
+}
