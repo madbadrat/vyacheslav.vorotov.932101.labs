@@ -24,6 +24,27 @@ public class HomeController : Controller
         return View(model);
     }
 
+    public IActionResult ViewBagMethod()
+    {
+        CalcModel model = new CalcModel();
+        ViewBag.FirstTerm = model.FirstTerm;
+        ViewBag.SecondTerm = model.SecondTerm;
+        return View();
+    }
+
+    public IActionResult ViewDataCalc()
+    {
+        CalcModel model = new CalcModel();
+        ViewData["FirstTerm"] = model.FirstTerm;
+        ViewData["SecondTerm"] = model.SecondTerm;
+        return View();
+    }
+
+    public IActionResult InjectionCalc()
+    {
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

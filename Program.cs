@@ -1,7 +1,10 @@
+using vyacheslav.vorotov._932101.labs.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<CalculationService, CalculationServiceImplementation>();
 
 var app = builder.Build();
 

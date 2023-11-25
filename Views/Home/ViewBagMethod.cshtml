@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "ViewBag";
+    var FirstTerm = ViewBag.FirstTerm;
+    var SecondTerm = ViewBag.SecondTerm;
+}
+
+<h1>ViewBag</h1>
+First Term: @FirstTerm <br>
+Second Term: @SecondTerm <br>
+<br>
+<h2>Results:</h2>
+Addition: @(FirstTerm + SecondTerm) <br>
+Subtraction: @(FirstTerm - SecondTerm) <br>
+Multiplication: @(FirstTerm * SecondTerm) <br>
+Division:
+@if (SecondTerm == 0)
+{
+    <span>ERROR!</span>
+}
+else 
+{
+    <span>@(FirstTerm / SecondTerm)</span>
+}

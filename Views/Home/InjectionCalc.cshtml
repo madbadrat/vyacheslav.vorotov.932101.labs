@@ -1,0 +1,25 @@
+@using vyacheslav.vorotov._932101.labs.Services
+@inject CalculationService CalculationServiceImplementation
+@{
+    ViewData["Title"] = "Inject Calc";
+    var FirstTerm = CalculationServiceImplementation.getNumber();
+    var SecondTerm = CalculationServiceImplementation.getNumber();
+}
+
+<h2>Inject calc</h2>
+First Term: @FirstTerm <br>
+Second Term: @SecondTerm <br>
+<br>
+<h2>Results:</h2>
+Addition: @(FirstTerm + SecondTerm) <br>
+Subtraction: @(FirstTerm - SecondTerm) <br>
+Multiplication: @(FirstTerm * SecondTerm) <br>
+Division:
+@if (SecondTerm == 0)
+{
+    <span>ERROR!</span>
+}
+else 
+{
+    <span>@(FirstTerm / SecondTerm)</span>
+}
