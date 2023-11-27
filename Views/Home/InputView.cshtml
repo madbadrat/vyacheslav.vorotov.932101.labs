@@ -1,0 +1,16 @@
+@model vyacheslav.vorotov._932101.labs.Models.CalcExpressionModel
+@{
+    string action = ViewContext.RouteData.Values["Action"].ToString();
+    ViewData["Titile"] = action;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@using (Html.BeginForm(action, "Home", FormMethod.Post))
+{
+    @Html.EditorFor(m => m.FirstTerm, "0") <br>
+    @Html.DropDownListFor(m => m.operation, new SelectList(new[] {"+","-","*","/"})) <br>
+    @Html.EditorFor(m => m.SecondTerm, "0") <br>
+
+    <input type="submit" value="Отправить">
+}

@@ -1,0 +1,9 @@
+@model vyacheslav.vorotov._932101.labs.Models.CalcExpressionModel
+@{
+    string action = ViewContext.RouteData.Values["Action"].ToString();
+    ViewData["Title"] = action;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@ViewData["Result"]
