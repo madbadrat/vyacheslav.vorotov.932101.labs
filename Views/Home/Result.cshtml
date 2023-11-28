@@ -1,0 +1,32 @@
+@using vyacheslav.vorotov._932101.labs.Services
+@inject QuizService QuizServiceImplementation
+@model vyacheslav.vorotov._932101.labs.Models.Quiz
+@{
+    ViewData["Title"] = "Results";
+
+    Quiz quiz = QuizServiceImplementation.getCurrentQuiz();
+    var rightQuestion = 0;
+    List<string> answers = new();
+    
+    for (int i=0;i<quiz.quizQuestions.Count; i++)
+    {
+        var currentQuestion = quiz.quizQuestions[i];
+        if (i >= quiz.quizQuestionAnswers.Count)
+        {
+            answers.Add($"{i+1}. {currentQuestion.FirstTerm} {currentQuestion.operation} {currentQuestion.SecondTerm} = no Answer");
+            continue;
+        }
+        var currentAnswer = quiz.quizQuestionAnswers[i];
+
+        if (currentAnswer.answer == currentQuestion.answer) rightQuestion++;
+        answers.Add($"{i+1}. {currentQuestion.FirstTerm} {currentQuestion.operation} {currentQuestion.SecondTerm} = {currentAnswer.answer}");
+    }
+}
+
+<h1>@ViewData["Title"]</h1>
+
+Right answers @rightQuestion out @quiz.quizQuestions.Count
+@foreach(var ans in answers)
+{
+    <br>@ans
+}

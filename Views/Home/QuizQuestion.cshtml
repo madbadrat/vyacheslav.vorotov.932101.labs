@@ -1,0 +1,19 @@
+@model vyacheslav.vorotov._932101.labs.Models.QuizModel
+@using vyacheslav.vorotov._932101.labs.Services
+@inject QuizService QuizServiceImplementation
+
+@{
+    string action = ViewContext.RouteData.Values["Action"].ToString();
+    ViewData["Title"] = action;
+    var quizQuestion = QuizServiceImplementation.getCurrentQuestion(Model.quiz);
+}
+
+<h1>@ViewData["Title"]</h1>
+@quizQuestion.FirstTerm @quizQuestion.operation @quizQuestion.SecondTerm =
+@using (Html.BeginForm(action, "Home", FormMethod.Post))
+{
+    <input type="text" name="answer">
+    Html.HiddenFor(model => model.quiz);
+    <input type="submit" name="action" value="next">
+    <input type="submit" name="action" value="finish">
+}
